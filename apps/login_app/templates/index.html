@@ -1,0 +1,169 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <title>RBC</title>
+    <link rel="stylesheet" href="/apps/login_app/static/css/styles.css">
+    <!-- <link rel="stylesheet" href="{% static 'css/styles.css' %}"> -->
+</head>
+
+<body>
+    <!-- header start   -->
+    <header>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <!-- Brand/logo -->
+            <a class="navbar-brand" href="#">RB</a>
+
+            <!-- Links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Treatments</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Community</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+
+            </ul>
+            <ul class="navbar-nav ml-auto">
+
+
+                <li class="nav-item">
+                    <a class='nav-link' href="/loginPage">Sign In</a>
+                </li>
+            </ul>
+
+        </nav>
+    </header>
+    <!-- header end -->
+    <div class="container-md">
+        <main class='row' id="main-images">
+            <!-- <img class='sm' src="/apps/login_app/static/img/logo.png" alt="logo mark"> -->
+            <img class='sm' src="{% static 'img/logo.png' %}" alt="lojo">
+            <!-- <img src="/apps/login_app/static/img/factor.jpg" width="550" height="400" -->
+            <!-- style="display:block; margin-right: auto; margin-left: auto;" alt="factor material"> -->
+
+
+            <img src="{% static 'img/factor.jpg' %}" width="550" height="400"
+                style="display:block; margin-right: auto; margin-left: auto;" alt="factor material">
+
+            <!-- <img class='smII' src="/apps/login_app/static/img/logo.png" alt="logo mark"> -->
+
+            <img class='smII' src="{% static 'img/logo.png' %}" alt="lol">
+
+        </main>
+
+        <div id='squares' class="row">
+            <div class="col">
+                <h3>Hemophilia is a rare blood disorder...</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis molestias ea numquam
+                    impedit
+                    dolor saepe fugit eum tempora tempore, nam architecto ab similique, in magni voluptatum nemo
+                    delectus
+                    ipsam? </p>
+                <!-- <a href="#">Learn More</a> -->
+                <!-- <img src="{% static 'img/factor.jpg' %}" alt="example-photos"> -->
+
+            </div>
+            <div class="col">
+                <h3>Workout and learn from others...</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis molestias ea numquam
+                    impedit
+                    dolor saepe fugit eum tempora tempore, nam architecto ab similique, in magni voluptatum nemo
+                    delectus
+                    ipsam? </p>
+                <!-- <a href="#">Learn More</a> -->
+                <!-- <img src="{% static 'img/factor.jpg' %}" alt="example-photos"> -->
+
+            </div>
+            <div class="w-100"></div>
+            <div class="col">
+                <h3>Share your story, connect with others...</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia reiciendis molestias ea numquam
+                    impedit
+                    dolor saepe fugit eum tempora tempore, nam architecto ab similique, in magni voluptatum nemo
+                    delectus
+                    ipsam? </p>
+                <!-- <a href="#">Learn More</a> -->
+                <!-- <img src="{% static 'img/factor.jpg' %}" alt="example-photos"> -->
+
+
+            </div>
+            <div class="col">
+                <h3>Sign up and track infusions....</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores, quo sequi ut vel harum vero
+                    cumque? Ipsa reiciendis perferendis, sed, numquam porro earum commodi dolorum veritatis ex,
+                    temporibus excepturi. Minus!</p>
+                <!-- <img src="{% static 'img/factor.jpg' %}" alt="example-photos"> -->
+
+            </div>
+        </div>
+
+        <div id="main-form">
+            <div class="container-fluid signInForm">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <form action="create_user" method="post">
+                            {% if messages %}
+                            <ul class="messages">
+                                {% for message in messages %}
+                                <li style='color:red' class="{{ message.tags }}">{{ message }}
+                                </li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                            {%csrf_token%}
+                            <h1> Sign Up </h1>
+
+                            <fieldset>
+
+                                <legend><span class="number">1</span> Your Basic Info</legend>
+
+                                <label for="name">First Name:</label>
+                                <input type="text" id="fname" name="first_name">
+                                <label for="name">Last Name:</label>
+                                <input type="text" id="lname" name="last_name">
+
+                                <label for="email">Email:</label>
+                                <input type="email" id="mail" name="email">
+
+                                <label for="password">Password:</label>
+                                <input type="password" id="password" name="password">
+                                <label for="conf_password">Confirm Password:</label>
+                                <input type="password" id="conf_password" name="conf_password">
+
+
+                                <!-- <label>Age:</label>
+                                <input type="radio" id="under_13" value="under_13" name="user_age"><label for="under_13"
+                                    class="light">Under 13</label><br>
+                                <input type="radio" id="over_13" value="over_13" name="user_age"><label for="over_13"
+                                    class="light">Over 13</label> -->
+
+                            </fieldset>
+                            <!--  -->
+
+                            <button type="submit">Sign Up</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    </div>
+
+</body>
+
+</html>
